@@ -1,0 +1,5 @@
+.pass
+src/
+build.js
+make_icons.py
+node_modules/
