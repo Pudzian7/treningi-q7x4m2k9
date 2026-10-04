@@ -242,6 +242,9 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     ]}
   ];
 
+  // To samo ćwiczenie w obu dniach dzieli "Poprzednio" (ostatni wynik z dowolnego z tych dni).
+  var SHARED = { lat_b: "lat_a", incline_db: "incline_a", lateral_b: "lateral_a", legext_b: "legext_a", legcurl_b: "legcurl_a", calf_b: "calf_a", abs_b: "abs_a" };
+  function lk(id) { return SHARED[id] || id; }
   var KEY = "dziennik-luk-v1";
   var state = { current: {}, warm: {}, extra: {}, warmDelta: {}, restCustom: {}, last: {}, history: [], best: null, tab: null, startedAt: null, rest: null };
   try { var raw = localStorage.getItem(KEY); if (raw) { var s = JSON.parse(raw); if (s && typeof s === "object") { state.current = s.current || {}; state.warm = s.warm || {}; state.extra = s.extra || {}; state.warmDelta = s.warmDelta || {}; state.restCustom = s.restCustom || {}; state.rest = s.rest || null; state.startedAt = s.startedAt && Date.now() - s.startedAt < 8 * 3600 * 1000 ? s.startedAt : null; state.history = Array.isArray(s.history) ? s.history : []; state.last = s.last || {}; state.best = s.best || null; state.tab = s.tab || null; } } } catch (e) {}
@@ -323,7 +326,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
       var a = el("a", "vid", "Zobacz technikę na YouTube ↗"); a.href = Q + encodeURIComponent(ex.q); a.target = "_blank"; a.rel = "noopener";
       m.appendChild(a); card.appendChild(m);
 
-      var last = state.last[ex.id];
+      var last = state.last[lk(ex.id)];
       if (last && last.sets && last.sets.length) {
         var lb = el("div", "last");
         var line = el("span"); var strong = el("b", null, "Ostatnio" + (last.date ? " (" + last.date + ")" : "") + ": ");
@@ -580,7 +583,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     state.history.slice().reverse().forEach(function (h) {
       h.ex.forEach(function (x) {
         var k = exKey(x); if (!k) return;
-        last[k] = { date: dmy(h.t), sets: x.sets };
+        last[lk(k)] = { date: dmy(h.t), sets: x.sets };
         if (k === "bench_a" || k === "bench_b") x.sets.forEach(function (st) {
           var v = st.reps === 1 ? st.kg : st.kg * (1 + st.reps / 30);
           if (!best || v > best.v) best = { v: v, kg: st.kg, reps: st.reps, date: dmy(h.t) };
@@ -634,7 +637,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
         if (kg != null && reps != null && reps > 0) done.push({ kg: kg, reps: Math.round(reps) });
       });
       if (!done.length) return;
-      state.last[ex.id] = { date: dt, sets: done }; saved++;
+      state.last[lk(ex.id)] = { date: dt, sets: done }; saved++;
       entry.ex.push({ id: ex.id, name: ex.name, sets: done });
       delete state.current[ex.id];
       if (ex.id === "bench_a" || ex.id === "bench_b") {
