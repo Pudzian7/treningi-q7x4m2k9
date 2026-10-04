@@ -3,3 +3,6 @@ src/
 build.js
 make_icons.py
 node_modules/
+build_luk.py
+reorder.py
+perf.py
