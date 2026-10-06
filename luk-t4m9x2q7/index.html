@@ -202,14 +202,14 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
   var Q = "https://www.youtube.com/results?search_query=";
   var DAYS = [
     { key: "pn", short: "Pn", name: "Upper A", focus: "Klatka na ciężko", color: "--plate-red", ex: [
-      { id: "bench_a", warm: 3, name: "Wyciskanie sztangi leżąc", sets: 4, lo: 4, hi: 6, rest: "2–3 min", cue: "Główne ćwiczenie dnia. Łopatki ściągnięte, stopy w podłodze, sztanga na dolną część klatki. Asekuracja kolegi.", q: "technika wyciskanie sztangi leżąc" },
+      { id: "bench_a", warm: 2, name: "Wyciskanie sztangi leżąc", sets: 4, lo: 4, hi: 6, rest: "2–3 min", cue: "Główne ćwiczenie dnia. Łopatki ściągnięte, stopy w podłodze, sztanga na dolną część klatki. Asekuracja kolegi.", q: "technika wyciskanie sztangi leżąc" },
       { id: "lat_a", warm: 1, name: "Ściąganie drążka wyciągu (Lat Pulldown)", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Klatka wypchnięta, łokcie w dół i do tyłu, bez bujania tułowiem.", q: "technika ściąganie drążka wyciągu górnego" },
-      { id: "incline_a", warm: 1, name: "Wyciskanie skośne hantlami", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Ławka ok. 30°, hantle schodzą na wysokość górnej klatki.", q: "technika wyciskanie hantli na ławce skośnej" },
+      { id: "incline_a", name: "Wyciskanie skośne hantlami", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Ławka ok. 30°, hantle schodzą na wysokość górnej klatki.", q: "technika wyciskanie hantli na ławce skośnej" },
       { id: "row_cs", name: "Wiosło siedząc na maszynie lub wyciągu (chwyt szeroki)", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Klatka wypchnięta, ściągasz łopatki, ciągniesz łokcie na boki i do tyłu, bez bujania tułowiem. Szeroki chwyt mocniej angażuje górne plecy.", q: "technika wiosłowanie siedząc na wyciągu szeroki chwyt" },
-      { id: "ohp", warm: 1, name: "Wyciskanie na maszynie barkowej", sets: 3, lo: 8, hi: 12, rest: "2 min", cue: "Plecy oparte, uchwyty neutralne lub lekko skośne. Rób ruch w zakresie, który masz w barkach, bez wymuszania go na siłę.", q: "technika wyciskanie na maszynie barkowej" },
+      { id: "ohp", name: "Wyciskanie na maszynie barkowej", sets: 3, lo: 8, hi: 12, rest: "2 min", cue: "Plecy oparte, uchwyty neutralne lub lekko skośne. Rób ruch w zakresie, który masz w barkach, bez wymuszania go na siłę.", q: "technika wyciskanie na maszynie barkowej" },
       { id: "lateral_a", name: "Unoszenie bokiem na wyciągu", sets: 3, lo: 10, hi: 12, rest: "1,5 min", cue: "Lekki ciężar, łokieć lekko ugięty, bez zamachu.", q: "technika unoszenie bokiem wyciąg dolny" },
       { id: "preacher", warm: 1, name: "Uginanie na modlitewniku hantlem (biceps)", sets: 2, lo: 8, hi: 11, rest: "bez przerwy, potem triceps", cue: "Superseria z tricepsem poniżej. Wolne opuszczanie, ramię na oparciu.", q: "technika uginanie na modlitewniku hantel" },
-      { id: "cross_tri", warm: 1, name: "Prostowanie ramion na wyciągach krzyżowo (triceps)", sets: 2, lo: 10, hi: 13, rest: "1,5 min po parze", cue: "Łokcie przy ciele, pełne wyprostowanie, napięcie na końcu ruchu.", q: "technika cross cable triceps extension" },
+      { id: "cross_tri", name: "Prostowanie ramion na wyciągach krzyżowo (triceps)", sets: 2, lo: 10, hi: 13, rest: "1,5 min po parze", cue: "Łokcie przy ciele, pełne wyprostowanie, napięcie na końcu ruchu.", q: "technika cross cable triceps extension" },
       { id: "hammer_a", name: "Uginanie młotkowe na wyciągu (biceps)", sets: 2, lo: 10, hi: 12, rest: "bez przerwy, potem triceps", cue: "Superseria z tricepsem poniżej. Dłonie do siebie, kontrolowany ruch.", q: "technika uginanie młotkowe na wyciągu" },
       { id: "pushdown_a", name: "Prostowanie ramion na wyciągu (triceps)", sets: 2, lo: 8, hi: 12, rest: "1,5 min po parze", cue: "Łokcie nieruchomo przy ciele, pełne wyprostowanie.", q: "technika prostowanie ramion na wyciągu triceps" }
     ]},
@@ -230,9 +230,9 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
       { id: "fly", name: "Rozpiętki na maszynie", sets: 2, lo: 10, hi: 12, rest: "1,5 min", cue: "Łokcie lekko ugięte, ściskasz klatkę na środku, bez wysuwania barków do przodu.", q: "technika rozpiętki na maszynie butterfly" },
       { id: "rear", name: "Tylne barki na wyciągu (reverse fly)", sets: 3, lo: 12, hi: 15, rest: "1,5 min", cue: "Lekki ciężar, łokcie lekko ugięte, rozwijasz ręce na boki.", q: "technika rear delt reverse fly wyciąg" },
       { id: "lateral_b", name: "Unoszenie bokiem na wyciągu", sets: 3, lo: 12, hi: 15, rest: "1,5 min", cue: "Lekki ciężar, bez zamachu.", q: "technika unoszenie bokiem wyciąg dolny" },
-      { id: "curl_b", name: "Uginanie ramion z hantlami (biceps)", sets: 3, lo: 6, hi: 8, rest: "bez przerwy, potem triceps", cue: "Superseria z tricepsem poniżej. Z supinacją: unosząc hantel, obracaj nadgarstek na zewnątrz (na górze dłoń do góry), ściśnij biceps. Cięższe powtórzenia, bez bujania.", q: "technika uginanie ramion z hantlami biceps" },
-      { id: "dips", name: "Dipsy z obciążeniem (triceps)", sets: 2, lo: 4, hi: 7, rest: "2 min po parze", cue: "Tułów lekko pochylony, schodź tak głęboko, jak pozwala zakres w barkach (wystarczy ok. 90° w łokciach). Przy małym zakresie zrób prostowanie na wyciągu.", q: "technika dipsy na poręczach z obciążeniem" },
-      { id: "curl_inc", warm: 1, name: "Uginanie hantlami na ławce skośnej (biceps)", sets: 3, lo: 10, hi: 12, rest: "1,5 min", cue: "Ławka ok. 45–60°, ramiona zwisają za tułowiem, pełne rozciągnięcie bicepsa na dole. Bez bujania, łokcie nieruchomo.", q: "technika uginanie hantli na ławce skośnej biceps" }
+      { id: "curl_b", warm: 1, name: "Uginanie ramion z hantlami (biceps)", sets: 3, lo: 6, hi: 8, rest: "1,5 min", cue: "Z supinacją: unosząc hantel, obracaj nadgarstek na zewnątrz (na górze dłoń do góry), ściśnij biceps. Cięższe powtórzenia, bez bujania, łokcie przy tułowiu.", q: "technika uginanie ramion z hantlami biceps" },
+      { id: "dips", zero: true, warm: 1, name: "Dipsy z obciążeniem (triceps)", sets: 2, lo: 4, hi: 7, rest: "2 min", cue: "Tułów lekko pochylony, schodź tak głęboko, jak pozwala zakres w barkach (wystarczy ok. 90° w łokciach). Przy małym zakresie zrób prostowanie na wyciągu.", q: "technika dipsy na poręczach z obciążeniem" },
+      { id: "curl_inc", name: "Uginanie hantlami na ławce skośnej (biceps)", sets: 3, lo: 10, hi: 12, rest: "1,5 min", cue: "Ławka ok. 45–60°, ramiona zwisają za tułowiem, pełne rozciągnięcie bicepsa na dole. Bez bujania, łokcie nieruchomo.", q: "technika uginanie hantli na ławce skośnej biceps" }
     ]},
     { key: "sob", short: "Pt/Sob", name: "Lower B", focus: "Nogi, objętość", color: "--plate-green", ex: [
       { id: "legpress_b", warm: 2, name: "Wypychanie na suwnicy", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Dolne plecy przy oparciu, nie blokuj kolan na górze, pełny zakres.", q: "technika suwnica wypychanie nogi" },
@@ -315,13 +315,23 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     }
     return ex.kg0 || null;
   }
+  function workWeight(sets) {
+    var c = {}, lastAt = {}, best = null;
+    sets.forEach(function (x, i) { var k = x.kg || 0; c[k] = (c[k] || 0) + 1; lastAt[k] = i; });
+    Object.keys(c).forEach(function (k) {
+      if (best === null || c[k] > c[best] || (c[k] === c[best] && lastAt[k] > lastAt[best])) best = k;
+    });
+    return +best;
+  }
   function hintFor(ex, last) {
     if (!last || !last.sets || !last.sets.length) return null;
-    var all = last.sets.length >= ex.sets && last.sets.every(function (s) { return s.reps != null && s.reps >= ex.hi; });
-    var maxKg = Math.max.apply(null, last.sets.map(function (s) { return s.kg || 0; }));
+    var w = workWeight(last.sets);
+    var at = last.sets.filter(function (x) { return (x.kg || 0) === w; });
+    var all = at.length >= Math.min(2, ex.sets) && at.every(function (x) { return x.reps != null && x.reps >= ex.hi; });
+    if (ex.zero && w === 0) return all ? "Masz górny zakres z masą ciała: dołóż obciążenie." : "Dobij do " + ex.hi + " powtórzeń z masą ciała.";
     if (ex.bw) return all ? "Masz górny zakres: dołóż obciążenie albo trudniejszą wersję." : "Dobij do " + ex.hi + " powtórzeń we wszystkich seriach.";
-    if (all) return "Dołóż 2,5 kg: spróbuj " + fmt(maxKg + 2.5) + " kg na " + ex.lo + " powtórzeń.";
-    return "Zostań przy " + fmt(maxKg) + " kg i dobij do " + ex.hi + " powtórzeń we wszystkich seriach.";
+    if (all) return "Dołóż 2,5 kg: spróbuj " + fmt(w + 2.5) + " kg na " + ex.lo + " powtórzeń.";
+    return "Zostań przy " + fmt(w) + " kg i dobij do " + ex.hi + " powtórzeń we wszystkich seriach.";
   }
 
   function renderDay() {
@@ -365,7 +375,8 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
       var hd = el("div", "set head");
       ["Seria", "Poprzednio", "kg", "Powt. (cel)", "✓"].forEach(function (t) { hd.appendChild(el("span", null, t)); });
       sets.appendChild(hd);
-      var ref = last && last.sets && last.sets.length ? Math.max.apply(null, last.sets.map(function (s) { return s.kg || 0; })) : (tk || null);
+      var ww = last && last.sets && last.sets.length ? workWeight(last.sets) : null;
+      var ref = ww != null ? ww : (tk || null);
       var wbase = ex.warm || 0, wn = Math.max(0, wbase + (state.warmDelta[ex.id] || 0));
       var pcts = ({ 1: [0.6], 2: [0.6, 0.8], 3: [0.5, 0.7, 0.85] })[wbase] || [];
       var wreps = ({ 1: [8], 2: [6, 3], 3: [8, 5, 2] })[wbase] || [];
@@ -377,7 +388,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
       var total = Math.max(0, ex.sets + (state.extra[ex.id] || 0));
       for (var i = 0; i < total; i++) {
         var pl = last && last.sets && last.sets[i];
-        sets.appendChild(setRow(ex, i, false, String(i + 1), pl, cur[i], ex.bw ? "" : (pl ? fmt(pl.kg || 0) : (tk ? fmt(tk) : "")), ex.lo === ex.hi ? String(ex.lo) : ex.lo + "–" + ex.hi, pl && pl.reps != null ? String(pl.reps) : ""));
+        sets.appendChild(setRow(ex, i, false, String(i + 1), pl, cur[i], ex.bw ? "" : (ww != null ? fmt(ww) : (tk ? fmt(tk) : "")), ex.lo === ex.hi ? String(ex.lo) : ex.lo + "–" + ex.hi, pl && pl.reps != null ? String(pl.reps) : ""));
       }
       card.appendChild(sets);
       list.appendChild(card);
@@ -567,10 +578,12 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
       ["kg", "reps"].forEach(function (f) {
         var inp = row.querySelector('input[data-f="' + f + '"]');
         if (inp && !inp.value && inp.dataset.fill) { inp.value = inp.dataset.fill; v[f] = inp.value; }
+        if (inp && f === "kg" && !inp.value && exById[c.dataset.ex].zero) { inp.value = "0"; v[f] = "0"; }
       });
       var missing = ["kg", "reps"].filter(function (f) {
         var inp = row.querySelector('input[data-f="' + f + '"]'); if (!inp) return false;
         var n = num(inp.value);
+        if (f === "kg" && exById[c.dataset.ex].zero) return n == null || n < 0;
         return n == null || n <= 0;
       });
       if (missing.length) {
