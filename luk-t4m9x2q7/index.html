@@ -130,6 +130,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
 .hw[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px; }
 .hx { display: flex; flex-direction: column; gap: 1px; padding-bottom: 8px; font-size: 0.9rem; }
 .hx span { color: var(--muted); font-variant-numeric: tabular-nums; }
+.bwl { font-size: 0.8rem; color: var(--muted); text-align: center; }
 .hdel { appearance: none; font: inherit; font-size: 0.85rem; cursor: pointer; background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; margin: 4px 0 12px; }
 .hdel.armed { background: var(--plate-red); border-color: var(--plate-red); color: #fff; font-weight: 600; }
 .hdel:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
@@ -218,20 +219,20 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
       { id: "legext_a", name: "Prostowanie nóg na maszynie", sets: 3, lo: 10, hi: 13, rest: "1,5 min", cue: "Pełne wyprostowanie, krótka pauza na górze.", q: "technika prostowanie nóg maszyna" },
       { id: "legcurl_a", name: "Uginanie nóg leżąc na maszynie", sets: 3, lo: 8, hi: 10, rest: "1,5 min", cue: "Powolne opuszczanie, biodra przy ławce.", q: "technika uginanie nóg leżąc maszyna" },
       { id: "calf_a", name: "Wspięcia na łydki siedząc", sets: 3, lo: 10, hi: 12, rest: "1,5 min", cue: "Pełny zakres, pauza na górze i na dole.", q: "technika wspięcia na łydki siedząc" },
-      { id: "abs_a", name: "Unoszenie nóg na poręczach", sets: 3, lo: 12, hi: 15, rest: "1,5 min", cue: "Wolno, bez bujania, miednica podkręcona do góry.", q: "technika unoszenie nóg na poręczach brzuch" },
+      { id: "abs_a", bw: true, name: "Unoszenie nóg na poręczach", sets: 3, lo: 12, hi: 15, rest: "1,5 min", cue: "Wolno, bez bujania, miednica podkręcona do góry.", q: "technika unoszenie nóg na poręczach brzuch" },
       { id: "crunch", name: "Spięcia brzucha na wyciągu (cable crunch)", sets: 3, lo: 10, hi: 15, rest: "1,5 min", cue: "Klęczysz przed wyciągiem, linka przy głowie, zaokrąglasz plecy i zbliżasz klatkę do bioder. Pracuje brzuch, a nie ramiona. Dokładaj ciężar jak w innych ćwiczeniach.", q: "technika cable crunch spięcia brzucha na wyciągu" }
     ]},
     { key: "czw", short: "Czw", name: "Upper B", focus: "Klatka i plecy, objętość", color: "--plate-yellow", ex: [
-      { id: "bench_b", warm: 2, name: "Wyciskanie sztangi leżąc, lżej", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Około 85% ciężaru z poniedziałku, kontrolowane opuszczanie.", q: "technika wyciskanie sztangi leżąc" },
+      { id: "bench_b", warm: 2, pct: ["bench_a", 0.85], name: "Wyciskanie sztangi leżąc, lżej", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Około 85% ciężaru z poniedziałku, kontrolowane opuszczanie.", q: "technika wyciskanie sztangi leżąc" },
       { id: "lat_b", warm: 1, name: "Ściąganie drążka wyciągu (szeroki chwyt)", sets: 3, lo: 8, hi: 12, rest: "2 min", cue: "Szeroki chwyt, klatka wypchnięta, łokcie w dół i do tyłu, bez bujania tułowiem. To drugie ściąganie w tygodniu, bo plecy mają trafiać w pion 2 razy.", q: "technika ściąganie drążka wyciągu górnego szeroki chwyt" },
       { id: "incline_db", warm: 1, name: "Wyciskanie skośne hantlami", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Ławka ok. 30°, hantle schodzą na wysokość górnej klatki.", q: "technika wyciskanie hantli na ławce skośnej" },
       { id: "row_cable", warm: 1, name: "Wiosło jednorącz na wyciągu", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Plecy proste, ciągniesz łokciem do biodra, pełne rozciągnięcie na dole.", q: "technika single arm cable row" },
-      { id: "fly", name: "Rozpiętki na maszynie", sets: 2, lo: 10, hi: 12, rest: "1,5 min", cue: "Łokcie lekko ugięte, ściskasz klatkę na środku, bez wysuwania barków do przodu.", q: "technika rozpiętki na maszynie butterfly" },
-      { id: "rear", name: "Tylne barki na wyciągu (reverse fly)", sets: 3, lo: 12, hi: 15, rest: "1,5 min", cue: "Lekki ciężar, łokcie lekko ugięte, rozwijasz ręce na boki.", q: "technika rear delt reverse fly wyciąg" },
+      { id: "fly", kg0: 50, name: "Rozpiętki na maszynie", sets: 2, lo: 10, hi: 12, rest: "1,5 min", cue: "Łokcie lekko ugięte, ściskasz klatkę na środku, bez wysuwania barków do przodu.", q: "technika rozpiętki na maszynie butterfly" },
+      { id: "rear", kg0: 15, name: "Tylne barki na wyciągu (reverse fly)", sets: 3, lo: 12, hi: 15, rest: "1,5 min", cue: "Lekki ciężar, łokcie lekko ugięte, rozwijasz ręce na boki.", q: "technika rear delt reverse fly wyciąg" },
       { id: "lateral_b", name: "Unoszenie bokiem na wyciągu", sets: 3, lo: 12, hi: 15, rest: "1,5 min", cue: "Lekki ciężar, bez zamachu.", q: "technika unoszenie bokiem wyciąg dolny" },
-      { id: "curl_b", name: "Uginanie ramion z hantlami (biceps)", sets: 3, lo: 6, hi: 8, rest: "bez przerwy, potem triceps", cue: "Superseria z tricepsem poniżej. Cięższe powtórzenia, bez bujania.", q: "technika uginanie ramion z hantlami biceps" },
-      { id: "dips", name: "Dipsy z obciążeniem (triceps)", sets: 2, lo: 4, hi: 7, rest: "2 min po parze", cue: "Tułów lekko pochylony, schodź tak głęboko, jak pozwala zakres w barkach (wystarczy ok. 90° w łokciach). Przy małym zakresie zrób prostowanie na wyciągu.", q: "technika dipsy na poręczach z obciążeniem" },
-      { id: "curl_inc", warm: 1, name: "Uginanie hantlami na ławce skośnej (biceps)", sets: 3, lo: 10, hi: 12, rest: "1,5 min", cue: "Ławka ok. 45–60°, ramiona zwisają za tułowiem, pełne rozciągnięcie bicepsa na dole. Bez bujania, łokcie nieruchomo.", q: "technika uginanie hantli na ławce skośnej biceps" }
+      { id: "curl_b", kg0: 17.5, name: "Uginanie ramion z hantlami (biceps)", sets: 3, lo: 6, hi: 8, rest: "bez przerwy, potem triceps", cue: "Superseria z tricepsem poniżej. Cięższe powtórzenia, bez bujania.", q: "technika uginanie ramion z hantlami biceps" },
+      { id: "dips", kg0: 10, name: "Dipsy z obciążeniem (triceps)", sets: 2, lo: 4, hi: 7, rest: "2 min po parze", cue: "Tułów lekko pochylony, schodź tak głęboko, jak pozwala zakres w barkach (wystarczy ok. 90° w łokciach). Przy małym zakresie zrób prostowanie na wyciągu.", q: "technika dipsy na poręczach z obciążeniem" },
+      { id: "curl_inc", warm: 1, kg0: 12.5, name: "Uginanie hantlami na ławce skośnej (biceps)", sets: 3, lo: 10, hi: 12, rest: "1,5 min", cue: "Ławka ok. 45–60°, ramiona zwisają za tułowiem, pełne rozciągnięcie bicepsa na dole. Bez bujania, łokcie nieruchomo.", q: "technika uginanie hantli na ławce skośnej biceps" }
     ]},
     { key: "sob", short: "Pt/Sob", name: "Lower B", focus: "Nogi, objętość", color: "--plate-green", ex: [
       { id: "legpress_b", warm: 2, name: "Wypychanie na suwnicy", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Dolne plecy przy oparciu, nie blokuj kolan na górze, pełny zakres.", q: "technika suwnica wypychanie nogi" },
@@ -239,8 +240,8 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
       { id: "legext_b", name: "Prostowanie nóg na maszynie", sets: 2, lo: 10, hi: 13, rest: "1,5 min", cue: "Pełne wyprostowanie, krótka pauza na górze.", q: "technika prostowanie nóg maszyna" },
       { id: "legcurl_b", name: "Uginanie nóg leżąc na maszynie", sets: 3, lo: 6, hi: 10, rest: "1,5 min", cue: "Powolne opuszczanie, biodra przy ławce.", q: "technika uginanie nóg leżąc maszyna" },
       { id: "calf_b", name: "Wspięcia na łydki na suwnicy", sets: 3, lo: 10, hi: 12, rest: "1,5 min", cue: "Pełny zakres ruchu, pauza na górze.", q: "technika wspięcia na łydki na suwnicy" },
-      { id: "abs_b", name: "Unoszenie nóg w zwisie", sets: 3, lo: 13, hi: 17, rest: "1,5 min", cue: "Wolno, bez bujania ciałem.", q: "technika unoszenie nóg w zwisie" },
-      { id: "wheel", name: "Koło do brzucha (lub plank)", sets: 3, lo: 8, hi: 12, rest: "1,5 min", cue: "Klęczysz, kołem wyjeżdżasz do przodu z napiętym brzuchem i prostymi plecami, wracasz bez wypychania pośladków. Jeśli za trudno, zrób plank 30–60 s.", q: "technika koło do brzucha ab wheel" }
+      { id: "abs_b", bw: true, name: "Unoszenie nóg w zwisie", sets: 3, lo: 13, hi: 17, rest: "1,5 min", cue: "Wolno, bez bujania ciałem.", q: "technika unoszenie nóg w zwisie" },
+      { id: "wheel", bw: true, name: "Koło do brzucha (lub plank)", sets: 3, lo: 8, hi: 12, rest: "1,5 min", cue: "Klęczysz, kołem wyjeżdżasz do przodu z napiętym brzuchem i prostymi plecami, wracasz bez wypychania pośladków. Jeśli za trudno, zrób plank 30–60 s.", q: "technika koło do brzucha ab wheel" }
     ]}
   ];
 
@@ -254,7 +255,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
   [state.current, state.warm].forEach(function (store) {
     Object.keys(store).forEach(function (k) {
       (store[k] || []).forEach(function (st) {
-        if (st && st.done) { var a = parseFloat(String(st.kg).replace(",", ".")), b = parseFloat(st.reps); if (!(a > 0) || !(b > 0)) st.done = false; }
+        if (st && st.done) { var a = parseFloat(String(st.kg).replace(",", ".")), b = parseFloat(st.reps); if (!(a >= 0) || !(b > 0)) st.done = false; }
       });
     });
   });
@@ -301,10 +302,24 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     });
   }
 
+  function fmtSet(st, bw) { return bw || !(st.kg > 0) ? (st.reps == null ? "?" : st.reps) + " powt." : fmt(st.kg) + " × " + (st.reps == null ? "?" : st.reps); }
+  function fmtDur(ms) { var m = Math.round(ms / 60000), h = Math.floor(m / 60); return h ? h + " h " + (m % 60) + " min" : m + " min"; }
+  function targetKg(ex) {
+    if (ex.bw) return null;
+    if (ex.pct) {
+      var base = state.last[lk(ex.pct[0])];
+      if (base && base.sets && base.sets.length) {
+        var mx = Math.max.apply(null, base.sets.map(function (x) { return x.kg || 0; }));
+        return Math.max(2.5, Math.round(mx * ex.pct[1] / 2.5) * 2.5);
+      }
+    }
+    return ex.kg0 || null;
+  }
   function hintFor(ex, last) {
     if (!last || !last.sets || !last.sets.length) return null;
     var all = last.sets.length >= ex.sets && last.sets.every(function (s) { return s.reps != null && s.reps >= ex.hi; });
     var maxKg = Math.max.apply(null, last.sets.map(function (s) { return s.kg || 0; }));
+    if (ex.bw) return all ? "Masz górny zakres: dołóż obciążenie albo trudniejszą wersję." : "Dobij do " + ex.hi + " powtórzeń we wszystkich seriach.";
     if (all) return "Dołóż 2,5 kg: spróbuj " + fmt(maxKg + 2.5) + " kg na " + ex.lo + " powtórzeń.";
     return "Zostań przy " + fmt(maxKg) + " kg i dobij do " + ex.hi + " powtórzeń we wszystkich seriach.";
   }
@@ -333,18 +348,24 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
         var lb = el("div", "last");
         var line = el("span"); var strong = el("b", null, "Ostatnio" + (last.date ? " (" + last.date + ")" : "") + ": ");
         line.appendChild(strong);
-        line.appendChild(document.createTextNode(last.sets.map(function (s) { return fmt(s.kg || 0) + "×" + (s.reps == null ? "?" : s.reps); }).join(", ")));
+        line.appendChild(document.createTextNode(last.sets.map(function (s) { return fmtSet(s, ex.bw); }).join(", ")));
         lb.appendChild(line);
         var ht = hintFor(ex, last); if (ht) lb.appendChild(el("span", "hint", ht));
         card.appendChild(lb);
       }
 
+      var tk = last && last.sets && last.sets.length ? null : targetKg(ex);
+      if (tk) {
+        var sb = el("div", "last");
+        sb.appendChild(el("span", "hint", "Start: " + fmt(tk) + " kg" + (ex.pct ? " (ok. 85% ciężaru z poniedziałku)" : " (podpowiedź na pierwszy raz, dopasuj do siebie)")));
+        card.appendChild(sb);
+      }
       var cur = state.current[ex.id] || [];
       var sets = el("div", "sets");
       var hd = el("div", "set head");
       ["Seria", "Poprzednio", "kg", "Powt. (cel)", "✓"].forEach(function (t) { hd.appendChild(el("span", null, t)); });
       sets.appendChild(hd);
-      var ref = last && last.sets && last.sets.length ? Math.max.apply(null, last.sets.map(function (s) { return s.kg || 0; })) : null;
+      var ref = last && last.sets && last.sets.length ? Math.max.apply(null, last.sets.map(function (s) { return s.kg || 0; })) : (tk || null);
       var wbase = ex.warm || 0, wn = Math.max(0, wbase + (state.warmDelta[ex.id] || 0));
       var pcts = ({ 1: [0.6], 2: [0.6, 0.8], 3: [0.5, 0.7, 0.85] })[wbase] || [];
       var wreps = ({ 1: [8], 2: [6, 3], 3: [8, 5, 2] })[wbase] || [];
@@ -356,7 +377,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
       var total = Math.max(0, ex.sets + (state.extra[ex.id] || 0));
       for (var i = 0; i < total; i++) {
         var pl = last && last.sets && last.sets[i];
-        sets.appendChild(setRow(ex, i, false, String(i + 1), pl, cur[i], pl ? fmt(pl.kg || 0) : "", ex.lo === ex.hi ? String(ex.lo) : ex.lo + "–" + ex.hi, pl && pl.reps != null ? String(pl.reps) : ""));
+        sets.appendChild(setRow(ex, i, false, String(i + 1), pl, cur[i], ex.bw ? "" : (pl ? fmt(pl.kg || 0) : (tk ? fmt(tk) : "")), ex.lo === ex.hi ? String(ex.lo) : ex.lo + "–" + ex.hi, pl && pl.reps != null ? String(pl.reps) : ""));
       }
       card.appendChild(sets);
       list.appendChild(card);
@@ -371,8 +392,9 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     bd.dataset.ex = ex.id; bd.dataset.i = idx; bd.dataset.label = label; if (warm) bd.dataset.w = "1";
     bd.setAttribute("aria-label", (warm ? "Rozgrzewka " : "Seria ") + (idx + 1) + ", dotknij dwa razy, aby usunąć");
     row.appendChild(bd);
-    row.appendChild(el("span", "prev", pl ? fmt(pl.kg || 0) + " × " + (pl.reps == null ? "?" : pl.reps) : "—"));
+    row.appendChild(el("span", "prev", pl ? fmtSet(pl, ex.bw) : "—"));
     ["kg", "reps"].forEach(function (f) {
+      if (ex.bw && f === "kg") { row.appendChild(el("span", "bwl", "masa ciała")); return; }
       var wrap = el("label", "field"); var inp = el("input");
       inp.type = "text"; inp.inputMode = f === "kg" ? "decimal" : "numeric"; inp.maxLength = f === "kg" ? 6 : 3; inp.autocomplete = "off";
       inp.id = (warm ? "w" : "") + f + "-" + ex.id + "-" + idx;
@@ -547,7 +569,8 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
         if (inp && !inp.value && inp.dataset.fill) { inp.value = inp.dataset.fill; v[f] = inp.value; }
       });
       var missing = ["kg", "reps"].filter(function (f) {
-        var inp = row.querySelector('input[data-f="' + f + '"]'), n = inp ? num(inp.value) : null;
+        var inp = row.querySelector('input[data-f="' + f + '"]'); if (!inp) return false;
+        var n = num(inp.value);
         return n == null || n <= 0;
       });
       if (missing.length) {
@@ -559,6 +582,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
         row.querySelector('input[data-f="' + missing[0] + '"]').focus();
         save(); return;
       }
+      if (exById[c.dataset.ex].bw) v.kg = "0";
       startRest(exById[c.dataset.ex], !!c.dataset.w);
     }
     row.classList.toggle("done", !!v.done); c.setAttribute("aria-pressed", v.done ? "true" : "false");
@@ -617,10 +641,11 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     state.history.slice(0, 30).forEach(function (h, idx) {
       var det = el("details", "hw"); if (idx === 0) det.open = true;
       var label = ""; try { label = new Date(h.t).toLocaleDateString("pl-PL", { weekday: "short", day: "2-digit", month: "2-digit" }); } catch (e) {}
-      det.appendChild(el("summary", null, label + " · " + h.day + " · " + h.ex.length + " ćw."));
+      det.appendChild(el("summary", null, label + " · " + h.day + " · " + h.ex.length + " ćw." + (h.dur ? " · " + fmtDur(h.dur) : "")));
       h.ex.forEach(function (x) {
         var row = el("div", "hx"); row.appendChild(el("b", null, x.name));
-        row.appendChild(el("span", null, x.sets.map(function (st) { return fmt(st.kg) + " × " + st.reps; }).join(" · ")));
+        var xk = exKey(x), xbw = !!(xk && exById[xk] && exById[xk].bw);
+        row.appendChild(el("span", null, x.sets.map(function (st) { return fmtSet(st, xbw); }).join(" · ")));
         det.appendChild(row);
       });
       var del = el("button", "hdel", "Usuń trening"); del.type = "button"; del.dataset.i = idx; det.appendChild(del);
@@ -631,7 +656,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
   function today() { var n = new Date(); return n.getDate() + "." + String(n.getMonth() + 1).padStart(2, "0"); }
 
   $("finish").addEventListener("click", function () {
-    var d = byKey[state.tab], saved = 0, dt = today(), entry = { t: Date.now(), day: d.name, ex: [] };
+    var d = byKey[state.tab], saved = 0, dt = today(), entry = { t: Date.now(), day: d.name, ex: [], dur: state.startedAt ? Date.now() - state.startedAt : 0 };
     d.ex.forEach(function (ex) {
       var cur = state.current[ex.id] || [], done = [];
       cur.forEach(function (s) {
