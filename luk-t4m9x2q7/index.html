@@ -246,11 +246,11 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
   ];
 
   // To samo ćwiczenie w obu dniach dzieli "Poprzednio" (ostatni wynik z dowolnego z tych dni).
-  var SHARED = { lat_b: "lat_a", incline_db: "incline_a", lateral_b: "lateral_a", legext_b: "legext_a", legcurl_b: "legcurl_a", calf_b: "calf_a", abs_b: "abs_a", legpress_b: "legpress_a" };
+  var SHARED = { incline_db: "incline_a", lateral_b: "lateral_a", legext_b: "legext_a", legcurl_b: "legcurl_a", calf_b: "calf_a", abs_b: "abs_a", legpress_b: "legpress_a" };
   function lk(id) { return SHARED[id] || id; }
   var KEY = "dziennik-luk-v1";
   var state = { current: {}, warm: {}, extra: {}, warmDelta: {}, restCustom: {}, last: {}, history: [], best: null, tab: null, startedAt: null, rest: null };
-  try { var raw = localStorage.getItem(KEY); if (raw) { var s = JSON.parse(raw); if (s && typeof s === "object") { state.current = s.current || {}; state.warm = s.warm || {}; state.extra = s.extra || {}; state.warmDelta = s.warmDelta || {}; state.restCustom = s.restCustom || {}; state.rest = s.rest || null; state.startedAt = s.startedAt && Date.now() - s.startedAt < 8 * 3600 * 1000 ? s.startedAt : null; state.history = Array.isArray(s.history) ? s.history : []; state.last = s.last || {}; state.best = s.best || null; state.tab = s.tab || null; } } } catch (e) {}
+  try { var raw = localStorage.getItem(KEY); if (raw) { var s = JSON.parse(raw); if (s && typeof s === "object") { state.current = s.current || {}; state.warm = s.warm || {}; state.extra = s.extra || {}; state.warmDelta = s.warmDelta || {}; state.restCustom = s.restCustom || {}; state.rest = s.rest || null; state.mig1 = !!s.mig1; state.startedAt = s.startedAt && Date.now() - s.startedAt < 8 * 3600 * 1000 ? s.startedAt : null; state.history = Array.isArray(s.history) ? s.history : []; state.last = s.last || {}; state.best = s.best || null; state.tab = s.tab || null; } } } catch (e) {}
   // Serie zaznaczone ✓ bez ciężaru lub powtórzeń (z wcześniejszej wersji) wracają do stanu niezaznaczonego.
   [state.current, state.warm].forEach(function (store) {
     Object.keys(store).forEach(function (k) {
@@ -692,6 +692,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     $("toast").textContent = saved ? "Zapisano " + saved + " ćwiczeń. Przy następnym treningu zobaczysz swoje wyniki i podpowiedzi." : "Nic do zapisania. Wpisz ciężar i powtórzenia, a potem zaznacz ✓ przy zrobionych seriach.";
   });
 
+  if (!state.mig1) { rebuildFromHistory(); state.mig1 = true; save(); }
   renderTabs(); renderDay(); renderGoal(); renderHist(); renderRest();
 })();
 </script>
