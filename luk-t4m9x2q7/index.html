@@ -126,7 +126,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
 #hist { display: flex; flex-direction: column; gap: 8px; }
 .hist-empty { margin: 0; color: var(--muted); font-size: 0.925rem; background: var(--surface); border: 1px dashed var(--line); border-radius: 6px; padding: 12px 14px; }
 .hw { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 0 14px; }
-.hw summary { cursor: pointer; padding: 11px 0; font-weight: 600; text-transform: capitalize; }
+.hw summary { cursor: pointer; padding: 11px 0; font-weight: 600; }
 .hw[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px; }
 .hx { display: flex; flex-direction: column; gap: 1px; padding-bottom: 8px; font-size: 0.9rem; }
 .hx span { color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -653,7 +653,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     if (!state.history.length) { box.appendChild(el("p", "hist-empty", "Tu pojawią się Twoje zapisane treningi: data, ćwiczenia, ciężary i powtórzenia.")); return; }
     state.history.slice(0, 30).forEach(function (h, idx) {
       var det = el("details", "hw"); if (idx === 0) det.open = true;
-      var label = ""; try { label = new Date(h.t).toLocaleDateString("pl-PL", { weekday: "short", day: "2-digit", month: "2-digit" }); } catch (e) {}
+      var label = ""; try { label = new Date(h.t).toLocaleDateString("pl-PL", { weekday: "short", day: "2-digit", month: "2-digit" }); label = label.charAt(0).toUpperCase() + label.slice(1); } catch (e) {}
       det.appendChild(el("summary", null, label + " · " + h.day + " · " + h.ex.length + " ćw." + (h.dur ? " · " + fmtDur(h.dur) : "")));
       h.ex.forEach(function (x) {
         var row = el("div", "hx"); row.appendChild(el("b", null, x.name));
