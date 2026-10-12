@@ -147,12 +147,12 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     <p class="sub">Upper / Lower, 4 dni w tygodniu (Pn, Wt, Czw, Pt lub Sob). Wpisujesz ciężar i powtórzenia, a strona podpowiada, kiedy dołożyć kilogramy.</p>
   </header>
 
-  <section class="goal" aria-label="Cel na wyciskaniu" hidden>
+  <section class="goal" aria-label="Cel na wyciskaniu">
     <div class="goal-row">
-      <span class="goal-label">Wyciskanie leżąc</span>
+      <span class="goal-label">Wyciskanie leżąc, cel 140 kg</span>
       <span class="goal-num"><span id="e1rm">—</span> <small>kg szac. max</small></span>
     </div>
-    <div class="bar" role="img" aria-label="Postęp"><i id="bar"></i></div>
+    <div class="bar" role="img" aria-label="Postęp do 140 kg"><i id="bar"></i></div>
     <p class="goal-note" id="goalnote">Zapisz pierwszy trening z wyciskaniem, a policzę z niego szacowany ciężar na jedno powtórzenie.</p>
   </section>
 
@@ -604,9 +604,9 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
   function renderGoal() {
     var b = state.best;
     $("e1rm").textContent = b ? fmt(b.v) : "—";
-    $("bar").style.width = b ? Math.min(100, b.v / 120 * 100) + "%" : "0";
+    $("bar").style.width = b ? Math.min(100, b.v / 140 * 100) + "%" : "0";
     $("goalnote").textContent = b
-      ? "Najlepsza seria: " + fmt(b.kg) + " kg × " + b.reps + " (" + b.date + ")."
+      ? "Najlepsza seria: " + fmt(b.kg) + " kg × " + b.reps + " (" + b.date + "). Do 140 kg brakuje ok. " + fmt(Math.max(0, 140 - b.v)) + " kg."
       : "Zapisz pierwszy trening z wyciskaniem, a policzę z niego szacowany ciężar na jedno powtórzenie.";
   }
 
