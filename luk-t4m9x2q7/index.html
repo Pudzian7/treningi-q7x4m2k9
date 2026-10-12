@@ -207,7 +207,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
       { id: "incline_a", name: "Wyciskanie skośne hantlami", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Ławka ok. 30°, hantle schodzą na wysokość górnej klatki.", q: "technika wyciskanie hantli na ławce skośnej" },
       { id: "row_cs", name: "Wiosło siedząc na maszynie lub wyciągu (chwyt szeroki)", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Klatka wypchnięta, ściągasz łopatki, ciągniesz łokcie na boki i do tyłu, bez bujania tułowiem. Szeroki chwyt mocniej angażuje górne plecy.", q: "technika wiosłowanie siedząc na wyciągu szeroki chwyt" },
       { id: "ohp", name: "Wyciskanie na maszynie barkowej", sets: 3, lo: 8, hi: 12, rest: "2 min", cue: "Plecy oparte, uchwyty neutralne lub lekko skośne. Rób ruch w zakresie, który masz w barkach, bez wymuszania go na siłę.", q: "technika wyciskanie na maszynie barkowej" },
-      { id: "lateral_a", name: "Unoszenie bokiem na wyciągu", sets: 3, lo: 10, hi: 12, rest: "1,5 min", cue: "Lekki ciężar, łokieć lekko ugięty, bez zamachu.", q: "technika unoszenie bokiem wyciąg dolny" },
+      { id: "lateral_a", step: 1, name: "Unoszenie bokiem na wyciągu", sets: 3, lo: 10, hi: 12, rest: "1,5 min", cue: "Lekki ciężar, łokieć lekko ugięty, bez zamachu.", q: "technika unoszenie bokiem wyciąg dolny" },
       { id: "hammer_a", name: "Uginanie młotkowe na wyciągu (biceps)", sets: 2, lo: 10, hi: 12, rest: "bez przerwy, potem triceps", cue: "Superseria z tricepsem poniżej. Dłonie do siebie, kontrolowany ruch.", q: "technika uginanie młotkowe na wyciągu" },
       { id: "pushdown_a", name: "Prostowanie ramion na wyciągu (triceps)", sets: 2, lo: 8, hi: 12, rest: "1,5 min po parze", cue: "Łokcie nieruchomo przy ciele, pełne wyprostowanie.", q: "technika prostowanie ramion na wyciągu triceps" }
     ]},
@@ -227,7 +227,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
       { id: "row_cable", name: "Wiosło na maszynie z podparciem klatki (chwyt neutralny, wąski)", sets: 3, lo: 8, hi: 10, rest: "2 min", cue: "Klatka oparta o poduszkę, uchwyty neutralne (dłonie do siebie). Ciągniesz łokcie blisko tułowia do tyłu, ściągasz łopatki, wracasz powoli z pełnym rozciągnięciem. Nie odrywaj klatki od oparcia.", q: "technika wiosłowanie na maszynie z podparciem klatki chest supported row" },
       { id: "fly", name: "Rozpiętki na maszynie", sets: 2, lo: 10, hi: 12, rest: "1,5 min", cue: "Łokcie lekko ugięte, ściskasz klatkę na środku, bez wysuwania barków do przodu.", q: "technika rozpiętki na maszynie butterfly" },
       { id: "rear", name: "Tylne barki na maszynie (odwrócony butterfly)", sets: 3, lo: 12, hi: 15, rest: "1,5 min", cue: "Siedzisz twarzą do oparcia maszyny, klatka oparta. Lekki ciężar, łokcie lekko ugięte, rozwijasz ręce na boki i do tyłu, ściągając łopatki, bez szarpania.", q: "technika odwrócony butterfly reverse pec deck tylne barki maszyna" },
-      { id: "lateral_b", name: "Unoszenie bokiem na wyciągu", sets: 3, lo: 12, hi: 15, rest: "1,5 min", cue: "Lekki ciężar, bez zamachu.", q: "technika unoszenie bokiem wyciąg dolny" },
+      { id: "lateral_b", step: 1, name: "Unoszenie bokiem na wyciągu", sets: 3, lo: 12, hi: 15, rest: "1,5 min", cue: "Lekki ciężar, bez zamachu.", q: "technika unoszenie bokiem wyciąg dolny" },
       { id: "curl_b", warm: 1, name: "Uginanie ramion z hantlami (biceps)", sets: 3, lo: 6, hi: 8, rest: "1,5 min", cue: "Z supinacją: unosząc hantel, obracaj nadgarstek na zewnątrz (na górze dłoń do góry), ściśnij biceps. Cięższe powtórzenia, bez bujania, łokcie przy tułowiu.", q: "technika uginanie ramion z hantlami biceps" },
       { id: "dips", zero: true, warm: 1, name: "Dipsy z obciążeniem (triceps)", sets: 2, lo: 4, hi: 7, rest: "2 min", cue: "Tułów lekko pochylony, schodź tak głęboko, jak pozwala zakres w barkach (wystarczy ok. 90° w łokciach). Przy małym zakresie zrób prostowanie na wyciągu.", q: "technika dipsy na poręczach z obciążeniem" },
       { id: "curl_inc", name: "Uginanie hantlami na ławce skośnej (biceps)", sets: 3, lo: 10, hi: 12, rest: "1,5 min", cue: "Ławka ok. 45–60°, ramiona zwisają za tułowiem, pełne rozciągnięcie bicepsa na dole. Bez bujania, łokcie nieruchomo.", q: "technika uginanie hantli na ławce skośnej biceps" }
@@ -244,11 +244,11 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
   ];
 
   // To samo ćwiczenie w obu dniach dzieli "Poprzednio" (ostatni wynik z dowolnego z tych dni).
-  var SHARED = { incline_db: "incline_a", lateral_b: "lateral_a", legext_b: "legext_a", legcurl_b: "legcurl_a", calf_b: "calf_a", abs_b: "abs_a", legpress_b: "legpress_a" };
+  var SHARED = { incline_db: "incline_a", legext_b: "legext_a", legcurl_b: "legcurl_a", calf_b: "calf_a", abs_b: "abs_a", legpress_b: "legpress_a" };
   function lk(id) { return SHARED[id] || id; }
   var KEY = "dziennik-luk-v1";
   var state = { current: {}, warm: {}, extra: {}, warmDelta: {}, restCustom: {}, last: {}, history: [], best: null, tab: null, startedAt: null, rest: null };
-  try { var raw = localStorage.getItem(KEY); if (raw) { var s = JSON.parse(raw); if (s && typeof s === "object") { state.current = s.current || {}; state.warm = s.warm || {}; state.extra = s.extra || {}; state.warmDelta = s.warmDelta || {}; state.restCustom = s.restCustom || {}; state.rest = s.rest || null; state.mig1 = !!s.mig1; state.startedAt = s.startedAt && Date.now() - s.startedAt < 8 * 3600 * 1000 ? s.startedAt : null; state.history = Array.isArray(s.history) ? s.history : []; state.last = s.last || {}; state.best = s.best || null; state.tab = s.tab || null; } } } catch (e) {}
+  try { var raw = localStorage.getItem(KEY); if (raw) { var s = JSON.parse(raw); if (s && typeof s === "object") { state.current = s.current || {}; state.warm = s.warm || {}; state.extra = s.extra || {}; state.warmDelta = s.warmDelta || {}; state.restCustom = s.restCustom || {}; state.rest = s.rest || null; state.mig1 = !!s.mig1; state.mig2 = !!s.mig2; state.startedAt = s.startedAt && Date.now() - s.startedAt < 8 * 3600 * 1000 ? s.startedAt : null; state.history = Array.isArray(s.history) ? s.history : []; state.last = s.last || {}; state.best = s.best || null; state.tab = s.tab || null; } } } catch (e) {}
   // Serie zaznaczone ✓ bez ciężaru lub powtórzeń (z wcześniejszej wersji) wracają do stanu niezaznaczonego.
   [state.current, state.warm].forEach(function (store) {
     Object.keys(store).forEach(function (k) {
@@ -328,7 +328,8 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     var all = at.length >= Math.min(2, ex.sets) && at.every(function (x) { return x.reps != null && x.reps >= ex.hi; });
     if (ex.zero && w === 0) return all ? "Masz górny zakres z masą ciała: dołóż obciążenie." : "Dobij do " + ex.hi + " powtórzeń z masą ciała.";
     if (ex.bw) return all ? "Masz górny zakres: dołóż obciążenie albo trudniejszą wersję." : "Dobij do " + ex.hi + " powtórzeń we wszystkich seriach.";
-    if (all) return "Dołóż 2,5 kg: spróbuj " + fmt(w + 2.5) + " kg na " + ex.lo + " powtórzeń.";
+    var stp = ex.step || 2.5;
+    if (all) return "Dołóż " + fmt(stp) + " kg: spróbuj " + fmt(w + stp) + " kg na " + ex.lo + " powtórzeń.";
     return "Zostań przy " + fmt(w) + " kg i dobij do " + ex.hi + " powtórzeń we wszystkich seriach.";
   }
 
@@ -690,7 +691,7 @@ h1 { font-size: 2.1rem; line-height: 1; letter-spacing: 0.01em; text-transform: 
     $("toast").textContent = saved ? "Zapisano " + saved + " ćwiczeń. Przy następnym treningu zobaczysz swoje wyniki i podpowiedzi." : "Nic do zapisania. Wpisz ciężar i powtórzenia, a potem zaznacz ✓ przy zrobionych seriach.";
   });
 
-  if (!state.mig1) { rebuildFromHistory(); state.mig1 = true; save(); }
+  if (!state.mig1 || !state.mig2) { rebuildFromHistory(); state.mig1 = true; state.mig2 = true; save(); }
   renderTabs(); renderDay(); renderGoal(); renderHist(); renderRest();
 })();
 </script>
